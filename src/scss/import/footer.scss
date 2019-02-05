@@ -1,0 +1,31 @@
+.footer {
+  @include flex();
+  background: $colorGray300;
+  border-top: 8px solid $colorPrimary;
+  height: 200px;
+  @include media-640 {
+    height: auto;
+    padding: 30px 0;
+  }
+  &__inner {
+    @include flex('space-between', 'flex-end');
+    @include media-640 {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+  &__logo {
+    width: 265px;
+    height: 75px;
+    @include media-640 {
+      margin-bottom: 10px;
+    }
+    & img {
+      width: 100%;
+    }
+  }
+  &__email {
+    color: $colorPrimary;
+    text-decoration: none;
+  }
+}

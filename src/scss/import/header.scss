@@ -1,0 +1,53 @@
+.header {
+  background: $colorGray300;
+  border-bottom: 8px solid $colorPrimary;
+  &__inner {
+    @include flex();
+    height: 80px;
+  }
+  &__logo {
+    width: 134px;
+    height: 37px;
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__form {
+    @include flex();
+  }
+  &__input {
+    width: 200px;
+  }
+  &__password {
+    margin-left: 25px;
+  }
+  &__countries {
+    margin-left: 30px;
+  }
+  &__country {
+    display: block;
+    line-height: 1;
+    cursor: pointer;
+    & input {
+      height: 1px;
+      visibility: hidden;
+    }
+    & input + span {
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: $colorWhite;
+    }
+    & input:checked + span {
+      color: $colorPrimary;
+    }
+  }
+  &__submit {
+    margin-left: 40px;
+    padding: 0 60px;
+    text-transform: uppercase;
+    &:hover {
+      background: $colorPrimary;
+    }
+  }
+}

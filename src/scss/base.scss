@@ -1,0 +1,73 @@
+$colorBlack: #2D2D2D;
+$colorWhite: #FFFFFF;
+$colorPrimary: #33cc33;
+$colorGray300: #666666;
+$colorGray400: #999999;
+$colorGray600: #cccccc;
+
+
+$font1: 'Myriad Pro', sans-serif;
+
+@mixin flex($justify: 'space-between', $align: 'center') {
+  display: flex;
+  justify-content: unquote($justify);
+  align-items: unquote($align);
+}
+@mixin dev($name: '', $height: 5, $color: #df1c41) {
+  border: 1px solid $color;
+  min-height: unquote($height + 'px');
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    content: $name;
+    color: #777;
+    font-size: 12px;
+  }
+}
+
+@mixin media-320() { @media all and (max-width: 320px) { @content; } }
+@mixin media-480() { @media all and (max-width: 480px) { @content; } }
+@mixin media-640() { @media all and (max-width: 640px) { @content; } }
+@mixin media-768() { @media all and (max-width: 768px) { @content; } }
+@mixin media-960() { @media all and (max-width: 960px) { @content; } }
+@mixin media-1200() { @media all and (max-width: 1200px) { @content; } }
+@mixin media-1440() { @media all and (max-width: 1440px) { @content; } }
+
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('/fonts/MyriadPro/MyriadPro-Regular.eot');
+  src: local('Myriad Pro Regular'), local('MyriadPro-Regular'),
+  url('/fonts/MyriadPro/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/MyriadPro/MyriadPro-Regular.woff') format('woff'),
+  url('/fonts/MyriadPro/MyriadPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('/fonts/MyriadPro/MyriadPro-Semibold.eot');
+  src: local('Myriad Pro Semibold'), local('MyriadPro-Semibold'),
+  url('/fonts/MyriadPro/MyriadPro-Semibold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/MyriadPro/MyriadPro-Semibold.woff') format('woff'),
+  url('/fonts/MyriadPro/MyriadPro-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('/fonts/MyriadPro/MyriadPro-Black.eot');
+  src: local('Myriad Pro Black'), local('MyriadPro-Black'),
+  url('/fonts/MyriadPro/MyriadPro-Black.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/MyriadPro/MyriadPro-Black.woff') format('woff'),
+  url('/fonts/MyriadPro/MyriadPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@import "~normalize.css/normalize.css";
+@import "import/*.scss";
