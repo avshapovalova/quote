@@ -37,6 +37,10 @@ ul, li {
   height: 38px;
   line-height: 38px;
   padding: 0 30px;
+  &.m-error {
+    background: #cd0000;
+    border-color: #cd0000;
+  }
 }
 .input {
   background: $colorGray600;
@@ -46,6 +50,11 @@ ul, li {
   line-height: 30px;
   text-align: center;
   &::placeholder { color: $colorWhite }
+  &.m-error {
+    border-color: #cd0000;
+    color: #cd0000;
+    &::placeholder { color: #cd0000 }
+  }
 }
 .ul {
   list-style: url('/img/round.png');
