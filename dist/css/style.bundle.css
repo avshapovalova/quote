@@ -408,6 +408,9 @@ ul, li {
   height: 38px;
   line-height: 38px;
   padding: 0 30px; }
+  .button.m-error {
+    background: #cd0000;
+    border-color: #cd0000; }
 
 .input {
   background: #cccccc;
@@ -418,6 +421,11 @@ ul, li {
   text-align: center; }
   .input::placeholder {
     color: #FFFFFF; }
+  .input.m-error {
+    border-color: #cd0000;
+    color: #cd0000; }
+    .input.m-error::placeholder {
+      color: #cd0000; }
 
 .ul {
   list-style: url("/img/round.png");

@@ -8,6 +8,14 @@ const App = {
     $(window).on('scroll', update)
 
     const $menu = $('.js-menu')
+
+    $menu.on('click', '.menu__link', function(e){
+      e.preventDefault()
+      const id = $(this).attr('href')
+      const top = $(id).position().top
+      $('html').animate({ scrollTop: top }, 1000)
+    })
+
     let requestId
     function update() {
       requestId && cancelAnimationFrame(requestId)
