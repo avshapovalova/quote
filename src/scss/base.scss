@@ -34,6 +34,7 @@ $font1: 'Myriad Pro', sans-serif;
 @mixin media-960() { @media all and (max-width: 960px) { @content; } }
 @mixin media-1200() { @media all and (max-width: 1200px) { @content; } }
 @mixin media-1440() { @media all and (max-width: 1440px) { @content; } }
+@mixin media-1201min() { @media all and (min-width: 1201px) { @content; } }
 
 
 @font-face {

@@ -6,13 +6,37 @@
   padding: 25px;
   z-index: 1000;
   transition: all 0.2s;
+  @include media-1440 {
+    top: 80px;
+  }
+  @include media-1200 {
+    position: static;
+  }
+  @include media-640 {
+    padding: 25px 0;
+  }
   &.m-bg {
-    background: $colorGray400;
+    @include media-1201min {
+      top: 20px;
+      right: 20px;
+      padding: 20px;
+      background: $colorGray400;
+      box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+      & .menu__item + .menu__item {
+        margin-top: 15px;
+      }
+    }
   }
   &__item {
     list-style: none;
+    transition: all 0.2s;
     & + & {
       margin-top: 30px;
+    }
+    @include media-640 {
+      & + & {
+        margin-top: 15px;
+      }
     }
   }
   &__link {

@@ -15,15 +15,30 @@
   }
   &__form {
     @include flex();
+    @include media-1200 {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
   &__input {
     width: 200px;
+    @include media-1200 {
+      width: 100%;
+    }
   }
   &__password {
     margin-left: 25px;
+    @include media-1200 {
+      margin-top: 10px;
+      margin-left: 0;
+    }
   }
   &__countries {
     margin-left: 30px;
+    @include media-1200 {
+      @include flex('flex-start');
+      margin: 12px 0 8px 0;
+    }
   }
   &__country {
     display: block;
@@ -48,6 +63,62 @@
     text-transform: uppercase;
     &:hover {
       background: $colorPrimary;
+    }
+    @include media-1200 {
+      margin-left: 0;
+      padding: 0;
+      width: 100%;
+    }
+  }
+  &__shader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
+    &.m-active {
+      display: block;
+    }
+  }
+  &__block {
+    @include media-1200 {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 400px;
+      max-width: 80%;
+      background: $colorGray400;
+      box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+      padding: 40px;
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: all 0.2s ease-in-out;
+    }
+    @include media-640 {
+      padding: 20px;
+    }
+    &.m-active {
+      @include media-1200 {
+        transform: translateX(0);
+      }
+    }
+  }
+  &__burger {
+    cursor: pointer;
+    width: 40px;
+    display: none;
+    @include media-1200 {
+      display: block;
+    }
+    & div {
+      height: 3px;
+      background: $colorPrimary;
+      & + div {
+        margin-top: 5px;
+      }
     }
   }
 }
