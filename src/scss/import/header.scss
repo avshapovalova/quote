@@ -3,7 +3,12 @@
   border-bottom: 8px solid $colorPrimary;
   &__inner {
     @include flex();
+    position: relative;
     height: 80px;
+    padding-bottom: 8px;
+    @include media-1200 {
+      padding-bottom: 0;
+    }
   }
   &__logo {
     width: 134px;
@@ -33,11 +38,26 @@
       margin-left: 0;
     }
   }
+  &__forgot {
+    position: absolute;
+    right: 390px;
+    bottom: 4px;
+    color: $colorWhite;
+    font-size: 13px;
+    text-decoration: none;
+    @include media-1200 {
+      align-self: flex-end;
+      margin-top: 10px;
+      position: static;
+      right: auto;
+      bottom: auto;
+    }
+  }
   &__countries {
     margin-left: 30px;
     @include media-1200 {
       @include flex('flex-start');
-      margin: 12px 0 8px 0;
+      margin: 12px 0 8px -14px;
     }
   }
   &__country {

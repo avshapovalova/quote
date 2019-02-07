@@ -2,6 +2,7 @@ const App = {
   init: function() {
     this.initMenu()
     this.initMobileMenu()
+    this.initForgot()
   },
 
   initMenu: function(){
@@ -46,5 +47,28 @@ const App = {
       $shader.removeClass('m-active')
       $mobileMenu.removeClass('m-active')
     })
+  },
+
+  initForgot: function() {
+    const $open = $('.js-forgot-open')
+    const $shader = $('.js-shader')
+    const $forgot = $('.js-forgot')
+
+    $open.on('click', function(e){
+      e.preventDefault()
+      open()
+    })
+
+    $shader.on('click', close)
+
+    function open() {
+      $shader.addClass('m-active')
+      $forgot.addClass('m-active')
+    }
+
+    function close() {
+      $shader.removeClass('m-active')
+      $forgot.removeClass('m-active')
+    }
   }
 }
